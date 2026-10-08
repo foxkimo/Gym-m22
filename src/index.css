@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  body {
+    background-color: #07090e;
+    color: #f1f5f9;
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Custom Gold Gradient Utilities */
+.gold-gradient {
+  background: linear-gradient(135deg, #f7cb55 0%, #e5a91b 50%, #b37a10 100%);
+}
+
+.gold-border {
+  border-color: rgba(229, 169, 27, 0.35);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px -5px rgba(229, 169, 27, 0.25);
+}
+
+/* Custom Scrollbar for PC Desktop & Touch */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080c16;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+  border: 1px solid #080c16;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #080c16;
+}
+
+/* ==========================================================================
+   LIGHT MODE ARCHITECTURE (النمط الفاتح المتكامل)
+   High-contrast, luxury gold & slate executive light theme
+   ========================================================================== */
+
+html.light body {
+  background-color: #f3f6fc !important;
+  color: #0f172a !important;
+}
+
+/* Surfaces and Cards */
+html.light .bg-\[\#07090e\],
+html.light .bg-\[\#07090e\]\/95,
+html.light .bg-\[\#070a12\],
+html.light .bg-\[\#090d16\],
+html.light .bg-\[\#090e18\],
+html.light .bg-\[\#0b0f19\],
+html.light .bg-\[\#0c101a\],
+html.light .bg-\[\#0e1017\],
+html.light .bg-\[\#0e121a\],
+html.light .bg-\[\#0e1320\],
+html.light .bg-\[\#0e1422\],
+html.light .bg-\[\#0e1626\],
+html.light .bg-\[\#101522\],
+html.light .bg-\[\#101626\],
+html.light .bg-\[\#101b2b\],
+html.light .bg-\[\#121826\],
+html.light .bg-slate-950,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.05);
+}
+
+/* Dark Sub-surfaces & Inset Boxes */
+html.light .bg-\[\#04060a\],
+html.light .bg-\[\#05070c\],
+html.light .bg-\[\#05070d\],
+html.light .bg-\[\#06080e\],
+html.light .bg-\[\#06080f\],
+html.light .bg-\[\#07090f\],
+html.light .bg-\[\#070b12\],
+html.light .bg-\[\#080b12\],
+html.light .bg-\[\#080c14\],
+html.light .bg-\[\#080d16\],
+html.light .bg-\[\#0a0e17\],
+html.light .bg-\[\#0b101c\],
+html.light .bg-\[\#0b1420\],
+html.light .bg-slate-900,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90 {
+  background-color: #f8fafc !important;
+}
+
+/* Modal and Backdrop overlays in Light Mode */
+html.light .bg-black\/85,
+html.light .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.55) !important;
+}
+
+/* Borders in Light Mode */
+html.light * {
+  border-color: rgba(15, 23, 42, 0.09);
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/70,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/90 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Typography in Light Mode */
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300,
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+/* Inputs & Form Elements in Light Mode */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15) !important;
+}
+
+/* Gradients in Light Mode */
+html.light .from-\[\#121826\],
+html.light .from-\[\#101522\],
+html.light .from-\[\#101626\],
+html.light .from-\[\#101b2b\] {
+  --tw-gradient-from: #ffffff !important;
+}
+
+html.light .via-\[\#090d16\],
+html.light .via-\[\#0e1422\],
+html.light .via-\[\#0b101c\],
+html.light .via-\[\#0b1420\] {
+  --tw-gradient-via: #f8fafc !important;
+}
+
+html.light .to-\[\#04060a\],
+html.light .to-\[\#05070c\],
+html.light .to-\[\#06080e\],
+html.light .to-\[\#070b12\],
+html.light .to-slate-950,
+html.light .to-slate-900 {
+  --tw-gradient-to: #f1f5f9 !important;
+}
+
+/* Light Scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Specific Optimizations */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}

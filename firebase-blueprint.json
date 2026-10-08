@@ -1,0 +1,137 @@
+{
+  "entities": {
+    "GymMember": {
+      "title": "GymMember",
+      "description": "Registered gym members and trainees",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "membershipNumber": { "type": "string" },
+        "fullNameAr": { "type": "string" },
+        "fullNameEn": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string" },
+        "joinDate": { "type": "string" },
+        "renewalDate": { "type": "string" },
+        "remainingDays": { "type": "number" },
+        "subscriptionPlan": { "type": "string" },
+        "assignedCoachId": { "type": "string" },
+        "totalPaid": { "type": "number" },
+        "remainingBalance": { "type": "number" }
+      },
+      "required": ["id", "fullNameAr", "phone", "status"]
+    },
+    "EmployeeAccount": {
+      "title": "EmployeeAccount",
+      "description": "Staff, coach, accountant, and manager accounts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "role": { "type": "string" },
+        "nameAr": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "phone": { "type": "string" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "accessCode": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "role", "nameAr", "accessCode"]
+    },
+    "FinancialTransaction": {
+      "title": "FinancialTransaction",
+      "description": "Income, expenses, and invoices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "description": { "type": "string" },
+        "recordedBy": { "type": "string" }
+      },
+      "required": ["id", "type", "amount", "date"]
+    },
+    "CashShift": {
+      "title": "CashShift",
+      "description": "Reception and accounting cash drawer shifts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "openedBy": { "type": "string" },
+        "openedAt": { "type": "string" },
+        "status": { "type": "string" },
+        "startingCash": { "type": "number" },
+        "expectedCash": { "type": "number" }
+      },
+      "required": ["id", "openedBy", "openedAt", "status"]
+    },
+    "SystemActivityLog": {
+      "title": "SystemActivityLog",
+      "description": "Audit trail of system events",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "performerName": { "type": "string" },
+        "titleAr": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "performerName", "titleAr"]
+    },
+    "GymService": {
+      "title": "GymService",
+      "description": "Offered packages, memberships, and classes",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameAr": { "type": "string" },
+        "price": { "type": "number" },
+        "durationMonths": { "type": "number" }
+      },
+      "required": ["id", "nameAr", "price"]
+    },
+    "SyncData": {
+      "title": "SyncData",
+      "description": "Global synchronized state packet for seamless cross-device persistence",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "payload": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "updatedBy": { "type": "string" }
+      },
+      "required": ["id", "payload", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/members/{memberId}": {
+      "schema": "GymMember",
+      "description": "Collection of all gym members"
+    },
+    "/employees/{employeeId}": {
+      "schema": "EmployeeAccount",
+      "description": "Collection of staff and managers"
+    },
+    "/transactions/{transactionId}": {
+      "schema": "FinancialTransaction",
+      "description": "Collection of financial logs"
+    },
+    "/shifts/{shiftId}": {
+      "schema": "CashShift",
+      "description": "Collection of cash register shifts"
+    },
+    "/activity_logs/{logId}": {
+      "schema": "SystemActivityLog",
+      "description": "Collection of activity logs"
+    },
+    "/services/{serviceId}": {
+      "schema": "GymService",
+      "description": "Offered memberships and packages"
+    },
+    "/sync_state/{stateId}": {
+      "schema": "SyncData",
+      "description": "Real-time global state sync documents across all devices"
+    }
+  }
+}

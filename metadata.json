@@ -1,0 +1,6 @@
+{
+  "name": "gym-m22 - نظام إدارة الجيم والتمارين",
+  "description": "نظام gym-m22 المتكامل للأندرويد و iOS لإدارة الأعضاء وتسجيل الدخول برقم العضوية وجداول التمارين المخصصة وتقارير PDF وسجل التدريب السابق.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
